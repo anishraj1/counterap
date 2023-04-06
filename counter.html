@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px black;
+            border-radius: 6px;
+        }
+        .container h1{
+            font-size: 3.5rem;
+        }
+        .main-section{
+            display: flex;
+            gap: 15px;
+        }
+        #decrement-btn{
+            padding: 5px 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #display-value{
+            border: 2px solid black;
+            padding: 4px 8px;
+            font-size: 25px;
+        }
+        #increment-btn{
+            padding: 5px 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #reset-btn{
+            padding: 5px 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- For counter app card -->
+    <div class="container">
+        <h1>Counter App</h1>
+
+        <div class="main-section">
+            <button id="decrement-btn">Decrement by 1</button>
+            <span id="display-value">0</span>
+            <button id="increment-btn">Increment by 1</button>
+        </div>
+
+        <button id="reset-btn">Reset Value</button>
+    </div>
+    <script>
+        // Getting HTML Element by ID
+        const decrementBtn = document.getElementById("decrement-btn");
+        const incrementBtn = document.getElementById("increment-btn");
+        const resetBtn = document.getElementById("reset-btn");
+        const displayValue = document.getElementById("display-value");
+
+        // Decrement Button
+        function decrement(){
+            const value = Number(displayValue.innerText);
+            if(value > 0){
+                displayValue.innerText = value - 1;
+            }
+            else{
+                alert("Negative value not allowed");
+            }
+        }
+        decrementBtn.addEventListener("click", decrement);
+
+        // Increment Button
+        function increment(){
+            const value = Number(displayValue.innerText);
+            if(value >= 10){
+                alert("Values over 10 are not allowed");
+            }
+            else{
+                displayValue.innerText = value + 1;
+            }
+        }
+        incrementBtn.addEventListener("click", increment);
+
+        // Reset Button
+        function reset(){
+            displayValue.innerText = 0;
+        }
+        resetBtn.addEventListener("click", reset);
+    </script>
+</body>
+</html>
