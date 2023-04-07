@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Out</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            background-color: burlywood;
+            cursor: pointer;
+            width: 300px;
+            text-align: center;
+            font-size: 1.4rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="mouse-out">Mouse Out</p>
+    </div>
+    <script>
+        const boxElement = document.getElementById("box");
+
+        function mouseoutalert(){
+            alert("Mouse out from me!");
+        }
+
+        boxElement.addEventListener("mouseout", mouseoutalert);
+    </script>
+</body>
+</html>
